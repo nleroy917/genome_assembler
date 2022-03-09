@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+
+import unittest
+from shortest_common_superstring import calculate_scs
+
+class TestAlignmentMethods(unittest.TestCase):
+
+    # The function should return the string A if string A is the only input
+    def test_scs_self(self):
+        sequences = ['ABC']
+        self.assertEqual(calculate_scs(sequences), 'ABC')
+
+    # A simple test with two strings that are the same
+    def test_scs_simple(self):
+        sequences = ['ABC', 'ABC']
+        self.assertEqual(calculate_scs(sequences), 'ABC')
+
+    # Another simple test with two strings
+    def test_scs_two(self):
+        sequences = ['ABC', 'BCD']
+        self.assertEqual(calculate_scs(sequences), 'ABCD')
+
+    # A case with three strings of equal length
+    def test_scs_three(self):
+        sequences = ['ABC', 'BCD', 'ZAB']
+        self.assertEqual(calculate_scs(sequences), 'ZABCD')
+
+    # A more challenging example, similar  to one from lecture
+    def test_scs_lecture(self):
+        sequences = ['BAA', 'AAB', 'BBA', 'ABA', 'ABB', 'BBB', 'AAA', 'BAB']
+        self.assertEqual(calculate_scs(sequences), 'AAABBBABAAB')
+
+    # A more relevant DNA example
+    def test_scs_dna(self):
+        sequences = ['GTACGT', 'TACGTA', 'ACGTAC', 'CGTACG', 'GTACGA', 'TACGAT']
+        self.assertEqual(calculate_scs(sequences), 'GTACGTACGAT')
+
+if __name__ == '__main__':
+    unittest.main()
+
