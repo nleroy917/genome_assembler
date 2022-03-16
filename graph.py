@@ -109,3 +109,13 @@ class Graph:
                 string_repr += f"\t{n1} -> {n2}\n"
         string_repr += "}"
         return string_repr
+    
+    def __repr__(self):
+        '''memory representation of the graph.
+        '''
+        string_repr = "Digraph " + f"{self.__name__}" + "\{\n"
+        for n1,n2s in self.edges.items():
+            for n2 in n2s:
+                string_repr += f"\t{n1} -> {n2}\n"
+        string_repr += "}"
+        return string_repr

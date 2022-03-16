@@ -26,15 +26,21 @@ from getopt import getopt, GetoptError
 from copy import deepcopy
 from graph import *
 
-def simplify(G):
+def simplify(G: Graph):
     """Simplify the graph S by removing the transitively-inferrible edges.
 
     S is just a copy of G, which is the input to the graph. 
     """
 
     S = deepcopy(G)
-
-    return S   
+    N = S.nodes()
+    for n1 in N:
+        for n2 in N:
+            for n3 in N:
+                if (n1, n2) != (n2, n3) and (n1, n2) != (n1, n3):
+                    if G.has_edge(n1, n2) and G.has_edge(n2, n3) and S.has_edge(n1, n3):
+                        S.delete_edge(n1, n3)
+    return S
 
 def main(filename):
     # read the graph from the input file

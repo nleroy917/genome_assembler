@@ -1,0 +1,24 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Shortest Common Superstring",
+      "type": "python",
+      "request": "launch",
+      "program": "test_shortest_common_superstring",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Transitive Reduction",
+      "type": "python",
+      "request": "launch",
+      "program": "test_remove_transitive_edges",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
